@@ -4,7 +4,7 @@ async function init() {
   const $primaryCards = $content.querySelector('.primary-cards');
   const $supportingCards = $content.querySelector('.supporting-cards');
 
-  const response = await fetch('/api/dashboard');
+  const response = await fetch('https://dashboard-lawrence.herokuapp.com/api/dashboard');
   const data = await response.json();
 
   const { primary_metrics, supporting_metrics: supportingCards } = data;
