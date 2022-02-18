@@ -7,8 +7,8 @@
     "compile-css": "sass ./src/scss/styles.scss ./public/dist/css/styles.css",
     "compile-css-prod": "sass ./src/scss/styles.scss ./public/dist/css/styles.css --no-source-map --style=compressed",
     "watch-css": "sass --watch ./src/scss/styles.scss ./public/dist/css/styles.css",
-    "compile-js": "rollup ./src/js/scripts.js --file ./dist/js/scripts.js --format iife",
-    "watch-js": "rollup ./src/js/scripts.js --file ./dist/js/scripts.js --format iife --watch"
+    "compile-js": "rollup ./src/js/scripts.js --file ./public/dist/js/scripts.js --format iife",
+    "watch-js": "rollup ./src/js/scripts.js --file ./public/dist/js/scripts.js --format iife --watch"
   },
   "dependencies": {
     "ejs": "^3.1.6",
