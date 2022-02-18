@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "start": "npm run compile && node server.js", 
-    "serve": "npm run watch-css & npm run watch-js",
+    "start": "npm run compile-prod && node server.js",
+    "serve": "npm run compile && concurrently 'npm:watch-css' 'npm:watch-js'" ,
     "compile": "npm run compile-css & npm run compile-js",
-    "compile-prod": "npm run compile-css-prod & npm run compile-js",
+    "compile-prod": "concurrently 'npm:compile-css-prod' 'npm:compile-js'",
     "compile-css": "sass ./src/scss/styles.scss ./public/dist/css/styles.css",
     "compile-css-prod": "sass ./src/scss/styles.scss ./public/dist/css/styles.css --no-source-map --style=compressed",
     "watch-css": "sass --watch ./src/scss/styles.scss ./public/dist/css/styles.css",
@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.2",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
     "rollup": "^2.63.0",
     "sass": "^1.47.0"
   }

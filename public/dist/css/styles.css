@@ -196,6 +196,7 @@ h2 {
 }
 
 .supporting-cards .card-metric {
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: flex-end;
