@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npm run compile && npm run serve", 
+    "start": "npm run compile && node server.js", 
     "serve": "npm run watch-css & npm run watch-js",
     "compile": "npm run compile-css & npm run compile-js",
     "compile-prod": "npm run compile-css-prod & npm run compile-js",
