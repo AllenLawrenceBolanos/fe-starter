@@ -1,34 +1,37 @@
-async function init() {
-  const $content = document.querySelector('.content');
-  const $total = $content.querySelector('.total');
-  const $primaryCards = $content.querySelector('.primary-cards');
-  const $supportingCards = $content.querySelector('.supporting-cards');
+(function () {
+  'use strict';
 
-  const response = await fetch('/api/dashboard');
-  const data = await response.json();
+  async function init() {
+    const $content = document.querySelector('.content');
+    const $total = $content.querySelector('.total');
+    const $primaryCards = $content.querySelector('.primary-cards');
+    const $supportingCards = $content.querySelector('.supporting-cards');
 
-  const { primary_metrics, supporting_metrics: supportingCards } = data;
-  const { total, cards: primaryCards } = primary_metrics;
+    const response = await fetch('/api/dashboard');
+    const data = await response.json();
 
-  // 1. render the total header text
-  $total.textContent = `Total ${total.label}: ${total.value}`;
+    const { primary_metrics, supporting_metrics: supportingCards } = data;
+    const { total, cards: primaryCards } = primary_metrics;
 
-  // 2. render the primary cards
-  primaryCards.forEach(card => {
-    $primaryCards.innerHTML += renderCard(card);
-  });
+    // 1. render the total header text
+    $total.textContent = `Total ${total.label}: ${total.value}`;
 
-  // 3. render the supporting cards
-  supportingCards.forEach(card => {
-    $supportingCards.innerHTML += renderCard(card);
-  });
-}
+    // 2. render the primary cards
+    primaryCards.forEach(card => {
+      $primaryCards.innerHTML += renderCard(card);
+    });
 
-function renderCard(card) {
-  const { service, username, value, label, metric } = card;
-  const { trend, percent, value: trendValue } = metric;   
-  
-  return `
+    // 3. render the supporting cards
+    supportingCards.forEach(card => {
+      $supportingCards.innerHTML += renderCard(card);
+    });
+  }
+
+  function renderCard(card) {
+    const { service, username, value, label, metric } = card;
+    const { trend, percent, value: trendValue } = metric;   
+    
+    return `
   <article class="card service-${service}">
     <div class="card-user">
       <img src="./images/icon-${service}.svg" alt="${service}">
@@ -46,6 +49,8 @@ function renderCard(card) {
     </p>
   </article>
 `;
-}
+  }
 
-init();
+  init();
+
+})();
