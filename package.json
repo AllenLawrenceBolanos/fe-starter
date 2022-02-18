@@ -8,7 +8,7 @@
     "compile-js": "rollup ./src/js/scripts.js --file ./dist/js/scripts.js --format iife",
     "watch-js": "rollup ./src/js/scripts.js --file ./dist/js/scripts.js --format iife --watch"
   },
-  "devDependencies": {
+  "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "rollup": "^2.63.0",
