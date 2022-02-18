@@ -12,206 +12,23 @@
     <script type="text/javascript" src="./dist/js/scripts.js" defer></script>
   </head>
   <body>
-    <div id="header-container">
-      <div id="title">
-        <!-- HEADER -->
+    <div class="topBG"></div>
+    <main class="content">
+      <header>
+        <aside class="mode-toggle">
+          <p>Dark Mode</p>
+          <input type="checkbox" name="toggle" id="toggle">
+          <label for="toggle" class="slider"></label>
+        </aside>
         <h1>Social Media Dashboard</h1>
-        <p id="totalFollowers"></p>
-      </div>
-      <div id="toggle">
-        <!-- TOGGLE -->
-        <p>Dark Mode</p>
-        <label id="toggle-button-container" class="label">
-          <input id="checkbox-input" type="checkbox" checked>
-          <span class="slider"></span>
-        </label>
-      </div>
-    </div>
-    <div class="social-media-container">
-      <div class="social-media-box-fb">
-        <!-- FACEBOOK -->
-        <div class="social-media-box-content">
-          <div class="user-container">
-            <img id="logoFB" alt="Facebook Icon" width="24px" height="24px">
-            <p id="usernameFB" class="user"></p>
-          </div>
-          <p id="currentFBFollowers" class="followers"></p>
-          <p id="currentFBLabel" class="followers-title"></p>
-          <div class="follower-changes">
-            <img id="trendMainFB" alt="Trend Icon">
-            <p id="metricValueFB" class="up"></p>
-          </div>
-        </div>
-      </div>
-      <div class="social-media-box-twitter">
-        <!-- TWITTER -->
-        <div class="social-media-box-content">
-          <div class="user-container">
-            <img id="logoTwitter" alt="Twitter Icon" width="24px" height="24px">
-            <p id="usernameTwitter" class="user"></p>
-          </div>
-          <p id="currentTwitterFollowers" class="followers"></p>
-          <p id="currentTwitterLabel" class="followers-title"></p>
-          <div class="follower-changes">
-            <img id="trendMainTwitter" alt="Trend Icon">
-            <p id="metricValueTwitter" class="up"></p>
-          </div>
-        </div>
-      </div>
-      <div class="social-media-box-instagram"> 
-        <!-- INSTAGRAM -->
-        <div class="social-media-box-content-ig">
-          <div class="user-container-ig">
-            <img id="logoIG" alt="Instagram Icon" width="24px" height="24px">
-            <p id="usernameIG" class="user"></p>
-          </div>
-          <p id="currentIGFollowers" class="followers"></p>
-          <p id="currentIGLabel" class="followers-title"></p>
-          <div class="follower-changes">
-            <img id="trendMainIG" alt="Trend Icon">
-            <p id="metricValueIG" class="up"></p>
-          </div>
-        </div>
-      </div>
-      <div class="social-media-box-yt">
-        <!-- YOUTUBE -->
-        <div class="social-media-box-content">
-          <div class="user-container">
-            <img id="logoYT" alt="Youtube Icon" width="24px" height="24px">
-            <p id="usernameYT" class="user"></p>
-          </div>
-          <p id="currentYTFollowers" class="followers"></p>
-          <p id="currentYTLabel" class="followers-title"></p>
-          <div class="follower-changes">
-            <img id="trendMainYT" alt="Trend Icon">
-            <p id="metricValueYT" class="down"></p>
-          </div>
-        </div>
-      </div>
-    </div>
+        <p class="total">Loading...</p>
+      </header>
+      
+      <section class="primary-cards"></section>
 
-    <div id="second-header-container">
-      <!-- OVERVIEW -->
-      <h1>Overview - Today</h1>
-    </div>
-    
-    <div id="social-media-statistics-container">
-      <div id="upper-statistics">
-        <div class="overview-card">
-          <!-- FACEBOOK PAGE VIEWS -->
-          <div class="title-and-icon">
-            <p id="pageViewsFB" class="statistics-title"></p>
-            <img id="pageViewsFBIcon" alt="Facebook Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="pageViewsFBValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendPageViewsFB" alt="Trend Icon">
-              <p id="pageViewsFBMetric" class="up"></p>
-            </div>
-          </div>
-        </div>
-        <div class="overview-card">
-          <!-- FACEBOOK LIKES -->
-          <div class="title-and-icon">
-            <p id="likesFB" class="statistics-title"></p>
-            <img id="likesFBIcon" alt="Facebook Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="likesFBValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendLikesFB" alt="Trend Icon">
-              <p id="likesFBMetric" class="down"></p>
-            </div>
-          </div>
-        </div>
-        <div class="overview-card">
-          <!-- INSTAGRAM LIKES -->
-          <div class="title-and-icon">
-            <p id="likesIG" class="statistics-title"></p>
-           <img id="likesIGIcon" alt="Instagram Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="likesIGValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendLikesIG" alt="Trend Icon">
-              <p id="likesIGMetric" class="up"></p>
-            </div>
-          </div>
-        </div>
-        <div class="overview-card">
-          <!-- INSTAGRAM PROFILE VIEWS -->
-          <div class="title-and-icon">
-            <p id="profileViewsIG" class="statistics-title"></p>
-            <img id="profileViewsIGIcon" alt="Instagram Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="profileViewsIGValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendProfileViewsIG" alt="Trend Icon">
-              <p id="profileViewsIGMetric" class="up"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="lower-statistics">
-        <div class="overview-card">
-          <!-- TWITTER RETWEETS -->
-          <div class="title-and-icon">
-            <p id="retweetsTwitter" class="statistics-title"></p>
-            <img id="retweetsTwitterIcon" alt="Twitter Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="retweetsTwitterValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendRetweetsTwitter" alt="Trend Icon">
-              <p id="retweetsTwitterMetric" class="up"></p>
-            </div>
-          </div>
-        </div>
-        <div class="overview-card">
-          <!-- TWITTER LIKES -->
-          <div class="title-and-icon">
-            <p id="likesTwitter" class="statistics-title"></p>
-            <img id="likesTwitterIcon" alt="Twitter Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="likesTwitterValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendLikesTwitter" alt="Trend Icon">
-              <p id="likesTwitterMetric" class="up"></p>
-            </div>
-          </div>
-        </div>
-        <div class="overview-card">
-          <!-- YOUTUBE LIKES -->
-          <div class="title-and-icon">
-            <p id="likesYT" class="statistics-title">Likes</p>
-            <img id="likesYTIcon" alt="Youtube Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="likesYTValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendLikesYT" alt="Trend Icon">
-              <p id="likesYTMetric" class="down"></p>
-            </div>
-          </div>
-        </div>
-        <div class="overview-card">
-          <!-- YOUTUBE TOTAL VIEWS -->
-          <div class="title-and-icon">
-            <p id="totalViewsYT" class="statistics-title"></p>
-            <img id="totalViewsYTIcon" alt="Youtube Icon" width="24px" height="24px">
-          </div>
-          <div class="data-and-changes">
-            <p id="totalViewsYTValue" class="statistics-data"></p>
-            <div class="statistics-changes">
-              <img id="trendTotalViewsYT" alt="Trend Icon">
-              <p id="totalViewsYTMetric" class="down"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <h2>Overview - Today</h2>
+
+      <section class="supporting-cards"></section>
+    </main>
   </body>
 </html>
